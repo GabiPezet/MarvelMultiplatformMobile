@@ -42,14 +42,16 @@ Para ello deberán:
 - **SQLDelight**: Local Database management.
 - **Koin**: Dependency injection.
 - **DataStore**: Local preferences storage.
-- 
+
 ## 📎 Agradecimientos:
 - A la imponente **Universidad Nacional de La Matanza (UNLaM)** por la confianza depositada.
 - Al Profesor **Brian Bayarri** por todo su temple y soporte constante.
 - A la Profesora **Aylen Hoz** por toda la dedicación y paciencia brindada.
-- **Toranzo Melany**: Mi familia y mi constante apoyo.
-- A la materia **Taller de Programación** por haberme demostrado que la programación es muy dura
-- cuando el trabajo individual apremia y que el trabajo en equipo debe consolidarse de forma constante
+- A **Toranzo Melany**: Mi familia y mi constante apoyo, sin ella nada de esto sería posible.
+- A la materia **Taller de Programación** , por haberme demostrado que el trabajo en equipo 
+- es un pilar fundamental en la programación. Además, me ha enseñado que este pilar debe ser
+- reforzado y consolidado con habilidades individuales de trabajo, las cuales fomentan una
+- resolución pragmática y eficiente de las problemáticas cotidianas de un programador.
 
 ## 📎 Aprenda más sobre las herramientas utilizadas
 
