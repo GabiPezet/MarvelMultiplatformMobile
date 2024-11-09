@@ -23,6 +23,7 @@ viewmodel = "2.8.2"
 coil = "3.0.0-alpha08"
 pagingComposeCommon = "3.3.0-alpha02-0.4.0"
 krypto = "3.0.0"
+sqlDelight = "2.0.1"
 kermit = "2.0.4"
 
 [libraries]
@@ -61,6 +62,13 @@ paging-common = {module = "app.cash.paging:paging-common", version.ref = "paging
 paging-compose-common = { module = "app.cash.paging:paging-compose-common", version.ref= "pagingComposeCommon"}
 #Krypto
 krypto = { module = "com.soywiz.korlibs.krypto:krypto", version.ref = "krypto"  }
+#SqlDelight
+android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
+sqldelight-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "sqlDelight" }
+sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
+#Logs
+logs-kermit = { module = "co.touchlab:kermit",version.ref = "kermit"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -69,3 +77,4 @@ composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-mu
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }

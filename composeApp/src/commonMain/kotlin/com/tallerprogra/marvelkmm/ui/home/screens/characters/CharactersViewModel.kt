@@ -4,14 +4,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tallerprogra.marvelkmm.domain.GetCharactersApiUseCase
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.IO
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class CharactersViewModel(val getCharacterApiUseCase: GetCharactersApiUseCase): ViewModel() {
 

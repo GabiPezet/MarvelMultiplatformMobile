@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.kotlinxSerialization)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -35,6 +36,8 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
+            //SQLDelight
+            implementation(libs.android.driver)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -63,10 +66,17 @@ kotlin {
             implementation(libs.paging.common)
 
             implementation(libs.krypto)
+            //SQLDelight
+            implementation(libs.sqldelight.coroutines)
+            implementation(libs.sqldelight.jvm)
+            //Logs
+            implementation(libs.logs.kermit)
         }
         iosMain.dependencies {
             //Ktor
             implementation(libs.ktor.client.darwin)
+            //SQLDelight
+            implementation(libs.native.driver)
         }
     }
 }
@@ -109,6 +119,14 @@ android {
 
 dependencies {
     debugImplementation(compose.uiTooling)
+}
+
+sqldelight {
+    databases {
+        create("MarvelDatabase") {
+            packageName.set("com.tallerprogra.marvelkmm")
+        }
+    }
 }
 
 

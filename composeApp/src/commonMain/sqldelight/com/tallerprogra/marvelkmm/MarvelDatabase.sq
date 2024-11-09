@@ -1,0 +1,22 @@
+CREATE TABLE marvel(
+id INTEGER NOT NULL PRIMARY KEY,
+name TEXT NOT NULL,
+description TEXT NOT NULL,
+thumbnail TEXT NOT NULL
+);
+
+insertCharacter:
+INSERT INTO marvel(id, name, description, thumbnail)
+VALUES (?, ?, ?, ?);
+
+deleteAllCharacters:
+DELETE FROM marvel;
+
+deleteCharacter:
+DELETE FROM marvel WHERE name = ?;
+
+getAllCharacters:
+SELECT * FROM marvel;
+
+getCharacter:
+SELECT * FROM marvel WHERE name = ? LIMIT 1;
