@@ -118,6 +118,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.startup.runtime)
     debugImplementation(compose.uiTooling)
 }
 

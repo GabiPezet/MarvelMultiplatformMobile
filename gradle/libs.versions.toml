@@ -25,6 +25,7 @@ pagingComposeCommon = "3.3.0-alpha02-0.4.0"
 krypto = "3.0.0"
 sqlDelight = "2.0.1"
 kermit = "2.0.4"
+startupRuntime = "1.2.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -69,6 +70,7 @@ sqldelight-jvm = { module = "app.cash.sqldelight:sqlite-driver", version.ref = "
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 #Logs
 logs-kermit = { module = "co.touchlab:kermit",version.ref = "kermit"}
+androidx-startup-runtime = { group = "androidx.startup", name = "startup-runtime", version.ref = "startupRuntime" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

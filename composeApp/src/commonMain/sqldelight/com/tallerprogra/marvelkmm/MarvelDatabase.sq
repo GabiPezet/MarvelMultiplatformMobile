@@ -1,8 +1,8 @@
 CREATE TABLE marvel(
-id INTEGER NOT NULL PRIMARY KEY,
+id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 name TEXT NOT NULL,
-description TEXT NOT NULL,
-thumbnail TEXT NOT NULL
+description TEXT,
+thumbnail TEXT
 );
 
 insertCharacter:
@@ -13,10 +13,15 @@ deleteAllCharacters:
 DELETE FROM marvel;
 
 deleteCharacter:
-DELETE FROM marvel WHERE name = ?;
+DELETE FROM marvel WHERE id = ?;
 
 getAllCharacters:
 SELECT * FROM marvel;
 
 getCharacter:
-SELECT * FROM marvel WHERE name = ? LIMIT 1;
+SELECT * FROM marvel WHERE id = ?;
+
+updateCharacter:
+UPDATE marvel
+SET name = ?, description = ?, thumbnail = ?
+WHERE id = ?;
