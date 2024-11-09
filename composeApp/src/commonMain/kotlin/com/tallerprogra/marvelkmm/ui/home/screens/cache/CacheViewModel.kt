@@ -2,7 +2,7 @@ package com.tallerprogra.marvelkmm.ui.home.screens.cache
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tallerprogra.marvelkmm.domain.GetCharacterCacheUseCase
+import com.tallerprogra.marvelkmm.domain.usecases.GetCharacterCacheUseCase
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
 import io.ktor.util.date.getTimeMillis
 import kotlinx.coroutines.flow.MutableStateFlow

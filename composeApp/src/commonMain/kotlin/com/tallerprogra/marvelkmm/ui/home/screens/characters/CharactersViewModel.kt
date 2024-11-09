@@ -2,7 +2,7 @@ package com.tallerprogra.marvelkmm.ui.home.screens.characters
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tallerprogra.marvelkmm.domain.GetCharactersApiUseCase
+import com.tallerprogra.marvelkmm.domain.usecases.GetCharactersApiUseCase
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
