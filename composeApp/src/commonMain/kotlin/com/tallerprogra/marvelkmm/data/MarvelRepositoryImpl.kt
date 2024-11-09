@@ -2,7 +2,7 @@ package com.tallerprogra.marvelkmm.data
 
 import com.tallerprogra.marvelkmm.data.remote.ApiService
 import com.tallerprogra.marvelkmm.data.remote.response.CharactersResponse
-import com.tallerprogra.marvelkmm.domain.MarvelRepository
+import com.tallerprogra.marvelkmm.domain.repo.MarvelRepository
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
 
 

@@ -1,9 +1,10 @@
-package com.tallerprogra.marvelkmm.domain
+package com.tallerprogra.marvelkmm.domain.usecases
 
 import com.soywiz.krypto.MD5
 import com.tallerprogra.marvelkmm.data.remote.PRIVATE_KEY
 import com.tallerprogra.marvelkmm.data.remote.PUBLIC_KEY
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
+import com.tallerprogra.marvelkmm.domain.repo.MarvelRepository
 import io.ktor.util.date.getTimeMillis
 import io.ktor.utils.io.core.toByteArray
 

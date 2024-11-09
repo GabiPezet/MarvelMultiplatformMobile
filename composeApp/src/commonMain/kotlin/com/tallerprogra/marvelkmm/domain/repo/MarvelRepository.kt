@@ -1,4 +1,4 @@
-package com.tallerprogra.marvelkmm.domain
+package com.tallerprogra.marvelkmm.domain.repo
 
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
 

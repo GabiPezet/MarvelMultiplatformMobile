@@ -1,4 +1,4 @@
-package com.tallerprogra.marvelkmm.domain
+package com.tallerprogra.marvelkmm.domain.usecases
 
 
 import androidx.compose.runtime.mutableStateOf
@@ -8,12 +8,14 @@ import com.tallerprogra.marvelkmm.data.database.CacheRepository
 import com.tallerprogra.marvelkmm.data.remote.PRIVATE_KEY
 import com.tallerprogra.marvelkmm.data.remote.PUBLIC_KEY
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
+import com.tallerprogra.marvelkmm.domain.repo.MarvelRepository
 import io.ktor.utils.io.core.toByteArray
 
 class GetCharacterCacheUseCase(
     private val cacheRepo: CacheRepository,
     private val marvelRepo: MarvelRepository,
-    getCharactersApiUseCase: GetCharactersApiUseCase) {
+    getCharactersApiUseCase: GetCharactersApiUseCase
+) {
 
     val items = mutableStateOf(listOf<CharacterModel>())
 
