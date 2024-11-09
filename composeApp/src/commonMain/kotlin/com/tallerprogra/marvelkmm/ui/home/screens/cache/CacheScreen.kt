@@ -1,4 +1,4 @@
-package com.tallerprogra.marvelkmm.ui.home.screens.characters
+package com.tallerprogra.marvelkmm.ui.home.screens.cache
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -33,6 +33,8 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.tallerprogra.marvelkmm.apptheme.AppColors.IndigoDye
+import com.tallerprogra.marvelkmm.apptheme.AppColors.VioletSky
 import com.tallerprogra.marvelkmm.domain.model.CharacterModel
 import com.tallerprogra.marvelkmm.ui.core.extensions.vertical
 import org.koin.compose.viewmodel.koinViewModel
@@ -40,12 +42,10 @@ import org.koin.core.annotation.KoinExperimentalAPI
 
 @OptIn(KoinExperimentalAPI::class)
 @Composable
-fun CharactersScreen() {
-    val charactersViewModel = koinViewModel<CharactersViewModel>()
-    val characterList by charactersViewModel.characters.collectAsState()
-    val isLoading by charactersViewModel.isLoading.collectAsState()
-    val error by charactersViewModel.error.collectAsState()
-
+fun CacheScreen() {
+    val cacheViewModel = koinViewModel<CacheViewModel>()
+    val characterList by cacheViewModel.characters.collectAsState()
+    val isLoading by cacheViewModel.isLoading.collectAsState()
 
     if (isLoading) {
         Box(
@@ -57,33 +57,27 @@ fun CharactersScreen() {
         ) {
             CircularProgressIndicator(color = Color.Cyan)
         }
-    } else if (error != null) {
-        Text(
-            modifier = Modifier.padding(16.dp),
-            text = "This Device has no internet connection T_T",
-            fontSize = 26.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.Red,
-            style = MaterialTheme.typography.titleMedium
-        )
     } else {
-        LazyColumn(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-            items(items = characterList) { character ->
-                CharacterModelItem(character)
+        Box(
+            modifier =
+            Modifier
+                .fillMaxSize()
+                .background(
+                    brush =
+                    Brush.verticalGradient(
+                        listOf(VioletSky, IndigoDye),
+                        startY = 0f,
+                        endY = 1200f,
+                    ),
+                ),
+            contentAlignment = Alignment.Center,
+        ) {
+            LazyColumn(modifier = Modifier.fillMaxSize().padding(16.dp)) {
+                items(items = characterList) { character ->
+                    CharacterModelItem(character)
+                }
             }
         }
-    }
-}
-
-@Composable
-fun CharacterItem(character: CharacterModel) {
-    Row(modifier = Modifier.padding(12.dp)) {
-        Text(
-            text = character.name,
-            style = MaterialTheme.typography.bodyMedium,
-            modifier = Modifier.weight(1f)
-        )
-        // TODO agregar imágen individual - prueba -
     }
 }
 
@@ -106,7 +100,7 @@ fun CharacterModelItem(characterModel: CharacterModel? = null) {
             Box(contentAlignment = Alignment.BottomStart) {
                 AsyncImage(
                     model = characterModel.thumbnail,
-                    contentDescription = "Character from Marvel API",
+                    contentDescription = "Character from Local Cache Database",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
                 )
@@ -169,7 +163,7 @@ fun CharacterModelDescriptionCard(
                 )
             } else {
                 Text(
-                    "Information classified by the S.H.I.E.L.D. bureau.",
+                    "This is a classified Database, be careful of S.H.I.E.L.D.",
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
                     style = MaterialTheme.typography.titleMedium
@@ -179,3 +173,4 @@ fun CharacterModelDescriptionCard(
         }
     }
 }
+

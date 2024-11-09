@@ -15,8 +15,8 @@ sealed class BottomBarItem {
 
 
     data class Comics(
-        override val route: String = Routes.Comics.route,
-        override val title: String = "Comics",
+        override val route: String = Routes.Cache.route,
+        override val title: String = "Cache",
         override val icon: @Composable () -> Unit = {
             Icon(imageVector = Icons.Default.Star, "")
         }
